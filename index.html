@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verbund ESG Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial; margin: 0; background: #f4f6f8; }
+    header { background: #0a3d62; color: white; padding: 20px; }
+    .container { padding: 20px; }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Verbund AG Sustainability Dashboard</h1>
+  <p>AI-powered ESG insights prototype</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🌱 Sustainability Overview</h2>
+    <p>
+      Verbund AG is Austria’s leading energy company and one of Europe’s largest producers 
+      of renewable electricity, with around 98% of its generation coming from renewable sources,
+      primarily hydropower. The company is actively investing in the energy transition by expanding
+      hydropower, wind, and solar energy, while also developing green hydrogen solutions.
+    </p>
+    <p>
+      The company is committed to achieving climate neutrality by 2050 and has already significantly
+      reduced greenhouse gas emissions. Its sustainability strategy also includes biodiversity protection,
+      such as restoring ecosystems and implementing fish migration systems at hydropower plants.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>📊 ESG Metrics (Prototype)</h2>
+    <canvas id="esgChart"></canvas>
+    <p>
+      ESG performance is strong, with high environmental performance driven by renewable energy,
+      supported by strong governance and social responsibility initiatives.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🤖 AI Insights</h2>
+    <p id="ai-output">Analyzing ESG data...</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 How AI was used</h2>
+    <p>
+      This prototype was developed using AI assistance. The AI was used to analyze and summarize
+      sustainability and ESG information from Verbund AG’s official website and integrated annual report.
+    </p>
+    <p>
+      Specifically, AI was used to:
+    </p>
+    <ul>
+      <li>Extract key sustainability themes such as renewable energy, decarbonization, and biodiversity</li>
+      <li>Summarize complex ESG report data into clear, user-friendly content</li>
+      <li>Generate insights about Verbund’s environmental, social, and governance performance</li>
+      <li>Assist in structuring the dashboard and website layout</li>
+    </ul>
+    <p>
+      The AI-generated insights section simulates how an AI agent could continuously analyze ESG data
+      and provide real-time recommendations or summaries for users.
+    </p>
+  </div>
+
+</div>
+
+<script>
+const ctx = document.getElementById('esgChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Environmental', 'Social', 'Governance'],
+    datasets: [{
+      label: 'Score',
+      data: [90, 75, 85],
+    }]
+  }
+});
+
+setTimeout(() => {
+  document.getElementById("ai-output").innerText =
+    "AI Insight: Verbund AG demonstrates excellent environmental performance due to its heavy reliance on renewable energy, particularly hydropower. Continued investment in wind, solar, and hydrogen positions the company strongly for long-term sustainability goals.";
+}, 1500);
+</script>
+
+</body>
+</html>
